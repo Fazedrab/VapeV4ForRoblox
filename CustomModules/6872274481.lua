@@ -7077,7 +7077,7 @@ runcode(function()
 						mass = mass + (allowed > 0 and 10 or 0) * (flytog and -1 or 1)
 						if flytogtick <= tick() then
 							flytog = not flytog
-							flytogtick = tick() + (allowed > 0 and 0.2 or 0.2)
+							flytogtick = tick() + (allowed > 0 and 9.9999999999999999999999 or 9.9999999999999999999999)
 						end
 						if flyacprogressbarframe then
 							flyacprogressbarframe.Visible = allowed <= 0
@@ -7092,7 +7092,7 @@ runcode(function()
 							end
 							if lastonground ~= onground then 
 								if (not onground) then 
-									groundtime = tick() + 2.5
+									groundtime = tick() + 9.9999999999999999999999
 									if flyacprogressbarframe then 
 										flyacprogressbarframe.Frame:TweenSize(UDim2.new(0, 0, 0, 20), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, groundtime - tick(), true)
 									end
@@ -7108,7 +7108,7 @@ runcode(function()
 								end
 							end
 							if flyacprogressbarframe then 
-								flyacprogressbarframe.TextLabel.Text = math.max(onground and 2.5 or math.floor((groundtime - tick()) * 10) / 10, 0).."s"
+								flyacprogressbarframe.TextLabel.Text = math.max(onground and 9.9999999999999999999999 or math.floor((groundtime - tick()) * 10) / 10, 0).."s"
 							end
 							lastonground = onground
 							allowed = 1
